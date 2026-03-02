@@ -38,11 +38,39 @@ formulario.addEventListener("submit",function(cliente){
     localStorage.setItem("turnos", JSON.stringify(turnos))
     
    mensaje(nombre,fecha,hora,servicio)
+   formulario.reset()
 })
 
+function cancelarTurno(nombre, fecha, hora, servicio){
+    let turnos = JSON.parse(localStorage.getItem("turnos")) || []
+    turnos = turnos.filter(turno => !(turno.nombre === nombre && turno.fecha === fecha && turno.hora === hora && turno.servicio === servicio))
+    localStorage.setItem("turnos", JSON.stringify(turnos))
+}
+
     function mensaje(nombre,fecha,hora,servicio){
-    let contenedorTurno=document.createElement("div")
-    contenedorTurno.innerHTML=`<p> El dia ${fecha} a las ${hora}hs, ${nombre} tiene turno para ${servicio}</p>`
-        document.body.appendChild(contenedorTurno)
+    let contenedorTurno = document.createElement("div")
+    contenedorTurno.className = "turno"
+    contenedorTurno.innerHTML = `
+        <div class="turno-info">
+            <p><strong>${nombre}</strong></p>
+            <p>📅 ${fecha}</p>
+            <p>🕐 ${hora}hs</p>
+            <p>✂️ ${servicio}</p>
+        </div>
+        <div class="turno-botones">
+            <button class="btn-cancelar" data-fecha="${fecha}" data-hora="${hora}" data-nombre="${nombre}">Cancelar</button>
+            <button class="btn-agregar">Agregar Servicio</button>
+        </div>
+    `
+    let listaTurnos = document.getElementById("listaTurnos")
+    listaTurnos.appendChild(contenedorTurno)
+    
+    // Evento para cancelar turno
+    contenedorTurno.querySelector(".btn-cancelar").addEventListener("click", function(){
+        cancelarTurno(nombre, fecha, hora, servicio)
+        contenedorTurno.remove()
+    })
+    
+   
  }
 
