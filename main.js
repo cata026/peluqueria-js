@@ -59,7 +59,6 @@ function cancelarTurno(nombre, fecha, hora, servicio){
         </div>
         <div class="turno-botones">
             <button class="btn-cancelar" data-fecha="${fecha}" data-hora="${hora}" data-nombre="${nombre}">Cancelar</button>
-            <button class="btn-agregar">Agregar Servicio</button>
         </div>
     `
     let listaTurnos = document.getElementById("listaTurnos")
