@@ -1,51 +1,48 @@
 
-let servicios=["Corte", "Alisado", "Tintura"]
-let precios = [5000, 10000, 15000]
+document.addEventListener("DOMContentLoaded", function(){
 
-function calcularTotal(precioRecibido, cantidadRecibida){
-    let resultado= precioRecibido * cantidadRecibida
-    return resultado
-}
+    let turnosGuardados = JSON.parse(localStorage.getItem("turnos")) || []
 
-function turno(){
-    servicio = "Ingrese el numero del servicio a realizar\n"
-    for(let i=0; i< servicios.length; i++){
-        servicio = servicio + (i+1) + "-" + servicios[i] + " ($" + precios[i] + ")\n"
-    }
-    let elegirServicio = parseInt(prompt(servicio));
-    if( elegirServicio >=1 && elegirServicio <= servicios.length){
-        let indice=elegirServicio -1
-        let cantidad = parseInt(prompt("¿Cuantos " + servicios[indice] + " quiere?"))
+    turnosGuardados.forEach(turno => {
+        mensaje(turno.nombre, turno.fecha, turno.hora, turno.servicio)
+    })
 
-        //ahora le pasamos los datos a la funcion para calcular el precio
+}) 
 
-        let total= calcularTotal(precios[indice], cantidad)
 
-        totalapagar = alert("El total a pagar es: $" + total) 
-    }else{
-        alert("no valido")
+class Turno { constructor( nombre, servicio, fecha, hora){
+    this.nombre=nombre;
+    this.servicio=servicio;
+    this.fecha=fecha;
+    this.hora=hora;
     }
 }
 
-function saludar(){
-   nombre = prompt("Ingrese su nombre: ")
-    deseaTurno = confirm("Bienvenida/o " + nombre + "!! Quiere solicitar un turno?")
-   if(deseaTurno){
-   let seguir= true
-    do {
-        turno()
-        seguir=confirm("Desea sacar otro turno " + nombre + "?")
-    } while (seguir){
-        alert("¡Gracias por su visita!")
-    }
-    }else{
-        alert("Nos vemos pronto")
-    }
-}
+const formulario=document.getElementById("formTurno")
 
+let botonenviar= document.getElementById("boton")
 
-saludar()
+formulario.addEventListener("submit",function(cliente){
+    cliente.preventDefault();
+    let nombre = document.getElementById("nombre").value
+    let fecha = document.getElementById("fecha").value
+    let hora = document.getElementById("hora").value
+    let servicio = document.querySelector(
+    'input[name="servicio"]:checked'
+).value;
+    const nuevoTurno= new Turno(nombre,servicio,fecha,hora)
+    let turnos = JSON.parse(localStorage.getItem("turnos")) || []
 
+    turnos.push(nuevoTurno)
 
+    localStorage.setItem("turnos", JSON.stringify(turnos))
+    
+   mensaje(nombre,fecha,hora,servicio)
+})
 
-  
+    function mensaje(nombre,fecha,hora,servicio){
+    let contenedorTurno=document.createElement("div")
+    contenedorTurno.innerHTML=`<p> El dia ${fecha} a las ${hora}hs, ${nombre} tiene turno para ${servicio}</p>`
+        document.body.appendChild(contenedorTurno)
+ }
+

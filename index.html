@@ -1,24 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Peluquería Style</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="contenedor">
-    <div class="lado-izquierdo">
-        <h1>Peluquería </h1>
-        <p class="subtitulo">Simulador de Turnos Online</p>
-    </div>
-    
-    <div class="lado-derecho">
-        <h2>Sobre el Proyecto</h2>
-        <p>Mi proyecto trata sobre simular una peluquería. Donde el cliente podrá reservar un turno o ninguno; en caso de quererlo, podrá acceder a los servicios con sus respectivos precios y solicitar el que desee y cuantos desee, así pudiendo ver el total a pagar. Luego se le preguntará si desea otro servicio, repitiéndose nuevamente todo el proceso.</p>
-        <button onclick="saludar()" class="btn-comenzar">Probar Simulador</button>
-    </div>
-</div>
-    <script src="main.js"></script>
+
+<header>
+    <h1>💇‍♀️ Peluquería Style</h1>
+    <!-- <button id="darkModeBtn">🌙 Dark Mode</button> -->
+</header>
+
+<main>
+
+    <h2>Reservar Turno</h2>
+
+    <form id="formTurno">
+
+        <input type="text" id="nombre" placeholder="Tu nombre" required>
+
+        <label>Elegí un servicio:</label>
+
+        <div class="servicios">
+
+            <label id="corte" class="card">
+                <input type="radio" name="servicio" value="Corte" required>
+                <img src="https://i.imgur.com/Wk8KZ9p.png">
+                <p>Corte<br>
+                $7000
+                </p>
+            </label>
+
+            <label id="color" class="card">
+                <input type="radio" name="servicio" value="Color">
+                <img src="https://i.imgur.com/Y7pY7XK.png">
+                <p>Color <br>
+                $20000
+                </p>
+            </label>
+
+            <label id="peinado" class="card">
+                <input type="radio" name="servicio" value="Peinado">
+                <img src="https://i.imgur.com/cYQFZ4B.png">
+                <p>Peinado<br>
+                $6000
+                </p>
+            </label>
+
+        </div>
+
+        <input type="date" id="fecha" required>
+        <input type="time" id="hora" required>
+
+        <button id="boton" type="submit">Reservar Turno</button>
+
+    </form>
+
+    <h2>Tus Proximos Turnos</h2>
+    <div id="listaTurnos"></div>
+
+</main>
+
+<script src="maindos.js"></script>
+
 </body>
 </html>
