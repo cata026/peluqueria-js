@@ -144,7 +144,9 @@ necesitamos empujar la sección de abajo para que el header no la tape.
   width: 100%;
   padding: 20px;
   margin: 20px auto;
+  border-radius: 10px;
 } 
+
 .section h2 {
   align-items: center;
   font-size: 3rem;
@@ -286,3 +288,55 @@ footer {
   color: #c96b85;
 }
 
+#galeria{
+  display: flex;
+  flex-direction: column;
+}
+
+.foto-servicio{
+  max-width: 350px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  margin: 8vh
+}
+
+/* Accordion styles */
+.acordion {
+  width: 100%;
+}
+
+.acordion-item {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.acordion-header {
+  background: linear-gradient(to right, #e9b4c3, #dfced3);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  transition: background 0.3s ease;
+}
+
+.acordion-header:hover {
+  background: linear-gradient(to right, #dd7796, #d6839a);
+}
+
+.acordion-body {
+  display: none;
+  padding: 15px 20px;
+  background: rgba(247, 241, 246, 0.9);
+  color: #535151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.acordion-item.active .acordion-body {
+  display: block;
+}
