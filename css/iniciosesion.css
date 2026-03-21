@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contenedor{
+  display: flex;          /* pone los elementos uno al lado del otro */
+  height: 100vh;          /* todo el alto de la pantalla */
+  width: 100%;   
+}
+
+.lado-izquierdo{
+  width: 50%;             /* Ocupa la mitad de la pantalla */
+  overflow: hidden;       /* Oculta partes que sobresalgan de la imagen */
+}
+
+img {
+  width: 100%;            /* La imagen ocupa todo el ancho */
+  height: 100%;           /* La imagen ocupa todo el alto */
+  object-fit: cover;      /* Ajusta la imagen sin deformarla */
+
+}
+
+.lado-derecho {
+  width: 50%;             /* Ocupa la mitad derecha */
+ background: #151421;
+background: linear-gradient(90deg, rgba(207, 82, 130, 0.93) 0%, rgb(170, 84, 131) 35%, rgb(209, 139, 186) 100%);
+  display: flex;          /* Para centrar el contenido */
+  justify-content: center;
+  align-items: center;
+}
+
+.iniciosesion{
+  display: flex;           /* Ahora sí permite centrar */
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;  /* Centrado vertical */
+  height: 70vh;
+  width: 70%;
+  display: flex;
+  flex-direction: column; /* Los elementos dentro van uno debajo del otro */
+  font-size: 2rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  background: rgba(116, 113, 113, 0.6);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.iniciosesion h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.iniciosesion input {
+  width: 130%;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.iniciosesion input::placeholder {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.iniciosesion button {
+  width: 40%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(170, 47, 84);
+  color: rgb(255, 251, 251);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.iniciosesion a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.iniciosesion button:hover {
+  background-color: rgb(245, 168, 241);
+}
+
+.mensaje {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: lightgreen;
+}
+
+#login{
+  display: flex;            /* Ahora sí permite centrar */
+  flex-direction: column;   /* Inputs uno abajo del otro */
+  justify-content: center;  /* Centrado vertical */
+  align-items: center;      /* Centrado horizontal */
+
+}
+
+/*esto es el menu*/
+.loginlinks{
+  position: absolute;
+  top: 10px;
+  left: 90%;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 8px 12px;
+  border: 1px solid rgb(255, 0, 0);
+  border-radius: 8px;
+  z-index: 1000;
+  font-size: 0.9rem;
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+
+.loginlinks a {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+}
+.loginlinks a:hover {
+  color: white;
+}

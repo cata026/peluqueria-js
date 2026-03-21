@@ -1,0 +1,288 @@
+
+* { /* asterisco significa todo*/
+  margin: 0; /*elimina el margen externo por defecto*/
+  padding: 0; /*elimina el padding interno por defecto*/
+  box-sizing: border-box; /*hace que el padding y el border se incluyan en el ancho y alto total del elemento, sin que lo agrande y mantenga el mismo tamaño*/
+}
+
+html, body { /*html y body son los elementos principales de la pagina*/
+  font-family: 'Orbitron', sans-serif; /*tipo de letra*/
+  background-color: black; /*para que toda la pagina tenga el mismo fondo*/
+  background-size: cover; /*para que la imagen de fondo cubra toda la pantalla*/
+  color: rgb(255, 255, 255);
+  display: flex; /*para que los elementos hijos se alineen en fila o columna*/
+  flex-direction: column; /*para que los elementos hijos se alineen en columna*/
+  margin: 0;
+  height: 100%; /*para que ocupe toda la altura de la pantalla*/
+  margin-top: 0%; /*elimina el margen superior*/
+  padding: 0; /*elimina el padding*/
+}
+
+a {
+  text-decoration: none; /*le saca la decoracion*/
+  color: inherit; /*le saca el color*/
+}
+
+.logo-container {
+  display: flex; /*es para poder centrar con justify-content y align-items*/
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+}
+
+.logo-container img{
+  width: 150px;
+  height: auto;
+}
+
+#inicio{ /*id de inicio que contiene el fondo y lo primero que se ve*/
+  width: auto;
+  padding-top: 20vh;
+  padding-left: 10vh;
+  padding-right: 100vh;
+  padding-bottom: 80vh;
+    background: 
+    linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+    url('../imagenes/fondo10.jpg'); /* fondo solo de la pagina de inicio*/
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  
+}
+
+.abajo{
+background: #ffffff;
+background: linear-gradient(0deg, rgb(136, 134, 138) 0%, rgb(85, 83, 85) 50%, rgb(58, 56, 56) 78%);
+}
+#inicio h1 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+} 
+
+#inicio p {
+  font-size: 2.2rem;
+  color: rgb(255, 255, 255);
+}
+
+.header-principal {
+  display: flex;
+  justify-content: center; /* Manda el logo a la izq y el contenedor a la der */
+  align-items: center; /* Alinea todo desde arriba */
+  width: 100%;
+  position: absolute; /* Para que el header quede flotando sobre tu fondo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Evita que el padding te ensanche la pantalla */
+  background-color: #ffffff;
+}
+
+/* ---  para tirar todo a la derecha y apilarlo --- */
+.contenedor-derecha {
+  display: flex;
+  flex-direction: row; /*  en fila */
+  align-items: center;
+  gap: 30px; /* espacio entre menú y botón */
+}
+
+.menu-links {
+  display: flex;
+  gap: 10vh; /* Espaciado entre las palabras del menú */
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #535151; /* Color de los links, ajustalo a tu gusto */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 1.5vh;
+}
+
+.menu-links a:hover {
+  color: #c96b85; /* Un rosado para que combine con tus íconos de fondo */
+}
+
+/* --- Botón (sin posiciones absolutas) --- */
+.loginlinks {
+  background: transparent;
+  border: 1px solid #c96b85;
+  padding: 16px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.loginlinks a {
+  color: #c96b85;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.loginlinks:hover {
+  background-color: #c96b85;
+}
+
+.loginlinks:hover a {
+  color: #ffffff;
+}
+
+/* IMPORTANTE: Como el header ahora es 'fixed' y mide 80px de alto, 
+necesitamos empujar la sección de abajo para que el header no la tape.
+*/
+#inicio {
+  padding-top: 10%; /* Empuja el contenido inicial hacia abajo */
+}
+
+
+
+
+
+
+.section { 
+  background: rgba(255, 255, 255, 0.774);
+  width: 100%;
+  padding: 20px;
+  margin: 20px auto;
+} 
+.section h2 {
+  align-items: center;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: rgb(190, 105, 169);
+}
+
+
+.cajas {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 auto;
+  font-size: 2.0rem;
+  margin-top: 20px;
+}
+
+.contcajas h3 {
+  margin-bottom: 20px;
+  font-size: 2.5rem; /* título más grande */
+  text-shadow: 0 0 10px rgb(255, 0, 0);
+}
+
+.contcajas {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgb(255, 0, 0);
+
+}
+
+.contcajas h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.contcajas p {
+  font-size: 0.95rem;
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.gallery img {
+  max-width: 300px;
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgb(255, 0, 0);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #ffffff;
+  background-color: black;
+}
+
+
+/* a partir de aca son las tarjetas/botones */
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: row;
+  padding:5% 20%;
+}
+
+.imagenes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.texto-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8%;
+}
+
+.texto-container h3 {
+  font-size: 2.3rem;
+  color: rgb(201, 107, 133);
+  margin: 0;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.equipo{
+  max-width: 250px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  padding-bottom: 10%;
+}
+
+.texto-tarjeta{
+  flex: 1;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #535151;
+}
+
+.link-sobre {
+  color: rgb(201, 107, 133);
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.link-sobre:hover {
+  color: #c96b85;
+}
+

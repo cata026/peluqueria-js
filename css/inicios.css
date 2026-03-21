@@ -1,0 +1,69 @@
+.iniciosesion{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-size: 2rem;
+  border: 2px solid red;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6)
+}
+
+.iniciosesion h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: red;
+  text-shadow: 0 0 8px red;
+}
+
+.iniciosesion input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.iniciosesion input::placeholder {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.iniciosesion button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: red;
+  color: rgb(255, 251, 251);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.iniciosesion{
+  color: rgb(255, 255, 255);
+  padding: 4px 0;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.iniciosesion a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.iniciosesion button:hover {
+  background-color: white;
+  color: red;
+}
+
+.mensaje {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: lightgreen;
+}
+
+/*hasta aca es inicio de sesion*/
