@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Feed tipo Pinterest</title>
+  <!-- Hoja de estilos principal del feed -->
+  <link rel="stylesheet" href="../css/galeria.css">
+</head>
+<body>
+  <!-- Contenedor principal de la página (puede usarse para layout global) -->
+  <div class="main">
+    <!-- HEADER: cabecera fija que contiene menú, logo y enlace de login -->
+    <header class="header-principal">
+      <div class="logo-container">
+        <img src="../imagenes/Logo.png" alt="Logo DeboraWorld">
+      </div>
+      <div class="contenedor-derecha">
+        <nav class="navegador">
+          <div class="menu-links" id="menuLinks">
+            <a href="#inicio">Inicio</a>
+            <a href="misiones2.html">Servicios</a>
+            <a href="galeria.html">Galeria</a>
+            <a href="nosotros.html">Sobre Nosotros</a>
+            <a href="index.html">Reservas Online</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+        </nav>
+        <button class="loginlinks">
+          <a href="iniciosesion.html">Iniciar Sesión</a>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN: contenedor tipo "grid" que recibe dinámicamente los "pins" -->
+    <!-- id="feed" es utilizado por proyectos.js para insertar las tarjetas -->
+    <main class="grid" id="feed">
+      <!-- aca se insertarán los pins con JavaScript -->
+    </main>
+
+    <!-- Botón flotante para abrir el formulario de nuevo proyecto -->
+    <button class="add-project-btn" title="Añadir Proyecto" onclick="abrirFormulario()">
+      <!-- Icono SVG dentro del botón -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+      </svg>
+    </button>
+
+     <!-- FOOTER: información de contacto y derechos -->
+    <footer>
+      <p>&copy; 2025 RAVKOSMOS. Todos los derechos reservados.
+         Email: contacto@ravkosmos.org<br>
+        Teléfono: +54 9 11 1234-5678<br>
+        Dirección: Centro Espacial Sur, Argentina
+      </p>
+    </footer>
+
+    <!-- MODAL: formulario para añadir un nuevo proyecto -->
+    <!-- El modal está oculto por defecto (.modal display:none). Se muestra con JS. -->
+    <div id="modalFormulario" class="modal">
+      <div class="modal-contenido">
+        <!-- Botón visible para cerrar el modal; llama a cerrarModal() en JS -->
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2>Añadir nuevo proyecto</h2>
+
+        <!-- Flex interno que contiene el formulario y la vista previa de la imagen -->
+        <div class="modal-flex">
+          <!-- Formulario: título, descripción, categoría e imagen (URL) -->
+          <form id="formularioProyecto">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" required></textarea>
+
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" required>
+              <option value="">Selecciona una categoría</option>
+              <option value="astronomia">Astronomía</option>
+              <option value="tierra">Tierra</option>
+              <option value="naturaleza">Naturaleza</option>
+              <option value="tecnologia">Tecnología</option>
+            </select>
+
+            <label for="imagen">Imagen (URL):</label>
+            <!-- oninput muestra la vista previa en tiempo real -->
+            <input type="url" id="imagen" name="imagen" required oninput="mostrarVistaPrevia()">
+
+            <button type="submit">Agregar</button>
+          </form>
+
+          <!-- Contenedor para la vista previa de la imagen (ayuda UX) -->
+          <div id="preview-container">
+            <img id="preview" src="" alt="Vista previa">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- cierre div.main -->
+
+  <!-- Scripts: proyectos.js llena el feed; script.js y formularioproy.js controlan UI/modal -->
+  <script src="../galeria.js"></script>
+  <script src="../script.js"></script>
+  <script src="../formgaleria.js"></script>
+</body>
+</html>

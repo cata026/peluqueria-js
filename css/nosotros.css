@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex; /*es para poder centrar con justify-content y align-items*/
+  justify-content: center;
+  align-items: center;
+  padding: 2vh;
+}
+
+.logo-container img{
+  width: 150px;
+  height: auto;
+}
+
+..header-principal {
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  align-items: center; /* Alinea todo desde arriba */
+  width: 100%;
+  position: fixed; /* menú fijo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 12px 20px;
+}
+
+body {
+  padding-top: 90px; /* espacio para header fijo */
+}
+
+/* ---  para tirar todo a la derecha y apilarlo --- */
+.contenedor-derecha {
+  display: flex;
+  flex-direction: row; /*  en fila */
+  align-items: center;
+  gap: 30px; /* espacio entre menú y botón */
+}
+
+.menu-links {
+  display: flex;
+  gap: 10vh; /* Espaciado entre las palabras del menú */
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #535151; /* Color de los links, ajustalo a tu gusto */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 1.5vh;
+}
+
+.menu-links a:hover {
+  color: #c96b85; /* Un rosado para que combine con tus íconos de fondo */
+}
+
+/* --- Botón (sin posiciones absolutas) --- */
+.loginlinks {
+  background: transparent;
+  border: 1px solid #c96b85;
+  padding: 16px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.loginlinks a {
+  color: #c96b85;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.loginlinks:hover {
+  background-color: #c96b85;
+}
+
+.loginlinks:hover a {
+  color: #ffffff;
+}
+
+/* IMPORTANTE: Como el header ahora es 'fixed' y mide 80px de alto, 
+necesitamos empujar la sección de abajo para que el header no la tape.
+*/
+#inicio {
+  padding-top: 10%; /* Empuja el contenido inicial hacia abajo */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    padding: 120px 20px 40px; /* espacio extra top para header */
+}
+
+.header-principal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+.contenedor-derecha {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative;
+}
+
+/* Línea vertical del timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #333;
+    top: 0;
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Marcadores (puntos) */
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 3px solid #333;
+    border-radius: 50%;
+    top: 0;
+    z-index: 10;
+}
+
+/* Contenido alterno */
+.timeline-content {
+    width: 45%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-content.left {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+}
+
+.timeline-content.right {
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+}
+
+.timeline-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Imágenes en timeline */
+.timeline-images {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.timeline-images img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Para cuando hay una sola imagen */
+.timeline-image-single {
+    margin: 20px 0;
+}
+
+.timeline-image-single img {
+    width: 100%;
+    max-width: 250px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-marker {
+        left: 30px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-content.left,
+    .timeline-content.right {
+        margin-left: 80px !important;
+    }
+
+    .timeline-images {
+        gap: 8px;
+    }
+
+    .timeline-images img {
+        height: 120px;
+        flex: 1;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 40px 15px 120px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-marker {
+        left: 20px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .timeline-content p {
+        font-size: 13px;
+    }
+
+    .timeline-images {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .timeline-images img {
+        height: auto;
+        max-height: 150px;
+    }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000;
+    padding: 14px 8px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.25);
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+

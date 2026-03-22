@@ -16,6 +16,7 @@ html, body { /*html y body son los elementos principales de la pagina*/
   height: 100%; /*para que ocupe toda la altura de la pantalla*/
   margin-top: 0%; /*elimina el margen superior*/
   padding: 0; /*elimina el padding*/
+  padding-top: 90px; /* espacio superior para header */
 }
 
 a {
@@ -25,7 +26,7 @@ a {
 
 .logo-container {
   display: flex; /*es para poder centrar con justify-content y align-items*/
-  justify-content: center;
+  justify-content: flex-start; /* alinea el logo a la izquierda */
   align-items: center;
   padding: 2vh;
 }
@@ -33,6 +34,11 @@ a {
 .logo-container img{
   width: 150px;
   height: auto;
+}
+
+.header-principal {
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  align-items: center;
 }
 
 #inicio{ /*id de inicio que contiene el fondo y lo primero que se ve*/

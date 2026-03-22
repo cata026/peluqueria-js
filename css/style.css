@@ -4,17 +4,89 @@ body {
     background: #f4f4f4;
     color: #222;
     transition: 0.3s;
+    padding-top: 90px; /* Evita que el header fijo tape el contenido */
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-image: url("headeroficial.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+.logo-container {
+  display: flex; /*es para poder centrar con justify-content y align-items*/
+  justify-content: flex-start; /* alinea el logo a la izquierda */
+  align-items: center;
+  padding: 2vh;
+}
+
+.logo-container img{
+  width: 150px;
+  height: auto;
+}
+
+.header-principal {
+  display: flex;
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  align-items: center; /* Alinea todo desde arriba */
+  width: 100%;
+  position: absolute; /* Para que el header quede flotando sobre tu fondo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Evita que el padding te ensanche la pantalla */
+  background-color: #ffffff;
+}
+
+/* ---  para tirar todo a la derecha y apilarlo --- */
+.contenedor-derecha {
+  display: flex;
+  flex-direction: row; /*  en fila */
+  align-items: center;
+  gap: 30px; /* espacio entre menú y botón */
+}
+
+.menu-links {
+  display: flex;
+  gap: 10vh; /* Espaciado entre las palabras del menú */
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #535151; /* Color de los links, ajustalo a tu gusto */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 1.5vh;
+}
+
+.menu-links a:hover {
+  color: #c96b85; /* Un rosado para que combine con tus íconos de fondo */
+}
+
+/* --- Botón (sin posiciones absolutas) --- */
+.loginlinks {
+  background: transparent;
+  border: 1px solid #c96b85;
+  padding: 16px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.loginlinks a {
+  color: #c96b85;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.loginlinks:hover {
+  background-color: #c96b85;
+}
+
+.loginlinks:hover a {
+  color: #ffffff;
+}
+
+/* IMPORTANTE: Como el header ahora es 'fixed' y mide 80px de alto, 
+necesitamos empujar la sección de abajo para que el header no la tape.
+*/
+#inicio {
+  padding-top: 10%; /* Empuja el contenido inicial hacia abajo */
 }
 
 main {
