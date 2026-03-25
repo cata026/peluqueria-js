@@ -1,0 +1,61 @@
+/* TURNOS */
+
+.turno {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 5px solid #ff7aa2;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.turno:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.turno-info {
+    flex: 1;
+}
+
+.turno-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.turno-botones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-cancelar, .btn-agregar {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cancelar {
+    background: #ff7aa2;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background: #ff5a7d;
+}
+
+.btn-agregar {
+    background: #4c3063;
+    color: white;
+}
+
+.btn-agregar:hover {
+    background: #3a234a;
+}

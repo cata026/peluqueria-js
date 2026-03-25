@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nombre": "Corte de Cabello largo",
+    "precio": 10000,
+    "categoria": "corte",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Corte de Cabello medio",
+    "precio": 8000,
+    "categoria": "corte",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Corte de Cabello corto",
+    "precio": 6000,
+    "categoria": "corte",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Coloración Completa",
+    "precio": 50000,
+    "categoria": "color",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Coloración Raiz",
+    "precio": 25000,
+    "categoria": "color",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Coloración Puntas",
+    "precio": 15000,
+    "categoria": "color",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Coloración Mechas",
+    "precio": 20000,
+    "categoria": "color",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Peinado de Fiesta",
+    "precio": 30000,
+    "categoria": "peinado",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Peinado de XV",
+    "precio": 40000,
+    "categoria": "peinado",
+    "imagen": "../imagenes/corte.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Peinado de Casamiento",
+    "precio": 50000,
+    "categoria": "peinado",
+    "imagen": "../imagenes/corte.jpg"
+  }
+]

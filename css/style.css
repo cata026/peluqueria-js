@@ -1,6 +1,8 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
     background: #f4f4f4;
     color: #222;
     transition: 0.3s;
@@ -24,13 +26,12 @@ body {
   justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   align-items: center; /* Alinea todo desde arriba */
   width: 100%;
-  position: absolute; /* Para que el header quede flotando sobre tu fondo */
-  top: 0;
-  left: 0;
+  position: relative; /* Para que el header se quede arriba y empuje lo de abajo*/
   z-index: 1000;
   box-sizing: border-box; /* Evita que el padding te ensanche la pantalla */
   background-color: #ffffff;
 }
+
 
 /* ---  para tirar todo a la derecha y apilarlo --- */
 .contenedor-derecha {
@@ -112,6 +113,7 @@ button {
     color: white;
     cursor: pointer;
     border-radius: 6px;
+    margin: 2vh;
 }
 
 button:hover {

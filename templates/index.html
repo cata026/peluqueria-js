@@ -15,8 +15,8 @@
   <div class="contenedor-derecha">
     <nav class="navegador">
       <div class="menu-links" id="menuLinks">
-        <a href="#inicio">Inicio</a>
-        <a href="misiones2.html">Servicios</a>
+        <a href="inicio.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
         <a href="galeria.html">Galeria</a>
         <a href="nosotros.html">Sobre Nosotros</a>
         <a href="index.html">Reservas Online</a>
@@ -41,33 +41,9 @@
 
         <label>Elegí un servicio:</label>
 
-        <div class="servicios">
+        <input type="text" id="buscador" placeholder="Buscar servicio (ej: Corte)...">
 
-            <label id="corte" class="card">
-                <input type="radio" name="servicio" value="Corte" required>
-                <img src="corte.jpg">
-                <p>Corte<br>
-                $7000
-                </p>
-            </label>
-
-            <label id="color" class="card">
-                <input type="radio" name="servicio" value="Color">
-                <img src="color.jpg">
-                <p>Color <br>
-                $20000
-                </p>
-            </label>
-
-            <label id="peinado" class="card">
-                <input type="radio" name="servicio" value="Peinado">
-                <img src="peinado.jpg">
-                <p>Peinado<br>
-                $6000
-                </p>
-            </label>
-
-        </div>
+        <div id="contenedor-servicios" class="servicios"></div>
 
         <input type="date" id="fecha" required>
         <input type="time" id="hora" required>
@@ -76,11 +52,10 @@
 
     </form>
 
-    <h2>Tus Proximos Turnos</h2>
-    <div id="listaTurnos"></div>
+    <button id="botonproxturno" type="button">Tus Proximos Turnos →</button>
 
 </main>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../main.js"></script>
 
 </body>

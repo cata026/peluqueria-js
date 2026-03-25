@@ -16,20 +16,6 @@
   height: auto;
 }
 
-..header-principal {
-  display: flex;
-  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
-  align-items: center; /* Alinea todo desde arriba */
-  width: 100%;
-  position: fixed; /* menú fijo */
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  padding: 12px 20px;
-}
-
 body {
   padding-top: 90px; /* espacio para header fijo */
 }
@@ -99,9 +85,7 @@ body {
 }
 
 .header-principal {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     right: 0;
     display: flex;
     justify-content: space-between;
