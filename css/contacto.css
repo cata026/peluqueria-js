@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #bd99d0 0%, #89529a 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-section {
+    width: 90%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.contacto-container {
+    display: flex;
+    gap: 40px;
+    background: rgba(217, 164, 216, 0.768);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* FORMULARIO */
+.contacto-form {
+    flex: 1;
+}
+
+.contacto-form h2 {
+    color: #000000;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background: #ff7aa2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background: #e66a91;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 122, 162, 0.4);
+}
+
+/* INFO DERECHA */
+.contacto-info {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.info-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+.redes a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ff7aa2;
+}
+
+.btn-volver-contacto {
+    margin-top: auto;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-volver-contacto:hover {
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contacto-container {
+        flex-direction: column;
+    }
+}

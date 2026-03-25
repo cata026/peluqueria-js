@@ -32,35 +32,42 @@ background: linear-gradient(90deg, rgba(207, 82, 130, 0.93) 0%, rgb(170, 84, 131
 }
 
 .iniciosesion{
-  display: flex;           /* Ahora sí permite centrar */
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;  /* Centrado vertical */
-  height: 70vh;
-  width: 70%;
   display: flex;
-  flex-direction: column; /* Los elementos dentro van uno debajo del otro */
-  font-size: 2rem;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 15px;
-  background: rgba(116, 113, 113, 0.6);
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 0.85rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  width: 80%;
+  max-width: 400px; /* Para que no sea gigante en pantallas grandes */
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido más moderno */
+  backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .iniciosesion h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: rgb(255, 255, 255);
 }
 
+#formlogin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .iniciosesion input {
-  width: 130%;
-  padding: 15px;
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-  border-radius: 10px;
+  width: 100%; /* Ahora sí ocupa lo que debe */
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
   border: none;
+  background: white;
+  font-size: 1rem;
+  box-sizing: border-box; /* Fundamental para que el padding no lo ensanche */
 }
 
 .iniciosesion input::placeholder {
@@ -69,15 +76,16 @@ background: linear-gradient(90deg, rgba(207, 82, 130, 0.93) 0%, rgb(170, 84, 131
 }
 
 .iniciosesion button {
-  width: 40%;
-  padding: 15px;
-  font-size: 1.2rem;
-  border-radius: 10px;
+  width: 100%;
+  padding: 12px;
+  background-color: #000;
+  color: white;
   border: none;
-  background-color: rgb(170, 47, 84);
-  color: rgb(255, 251, 251);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .iniciosesion a{
@@ -102,25 +110,28 @@ background: linear-gradient(90deg, rgba(207, 82, 130, 0.93) 0%, rgb(170, 84, 131
 
 }
 
-/*esto es el menu*/
-.loginlinks{
-  position: absolute;
-  top: 10px;
-  left: 90%;
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 8px 12px;
-  border: 1px solid rgb(255, 0, 0);
-  border-radius: 8px;
-  z-index: 1000;
-  font-size: 0.9rem;
-  color: rgb(255, 0, 0);
-  text-decoration: none;
+.acciones-inferiores {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
 }
 
-.loginlinks a {
-  color: rgb(255, 0, 0);
-  text-decoration: none;
+.acciones-inferiores hr {
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 20px 0;
 }
-.loginlinks a:hover {
+
+.btn-volver {
+  display: inline-block;
   color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.btn-volver:hover {
+  opacity: 1;
+  text-decoration: underline;
 }

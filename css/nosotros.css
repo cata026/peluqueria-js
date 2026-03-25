@@ -1,23 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.logo-container {
-  display: flex; /*es para poder centrar con justify-content y align-items*/
-  justify-content: center;
-  align-items: center;
-  padding: 2vh;
-}
-
-.logo-container img{
-  width: 150px;
-  height: auto;
-}
-
 body {
-  padding-top: 90px; /* espacio para header fijo */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
 /* ---  para tirar todo a la derecha y apilarlo --- */
@@ -70,54 +55,50 @@ body {
   color: #ffffff;
 }
 
-/* IMPORTANTE: Como el header ahora es 'fixed' y mide 80px de alto, 
-necesitamos empujar la sección de abajo para que el header no la tape.
-*/
-#inicio {
-  padding-top: 10%; /* Empuja el contenido inicial hacia abajo */
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fafafa;
-    color: #333;
-    padding: 120px 20px 40px; /* espacio extra top para header */
-}
 
 .header-principal {
     position: relative;
-    right: 0;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     background-color: #ffffff;
-    padding: 12px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 15px 20px;
+    box-sizing: border-box;
     z-index: 1000;
 }
 
 .contenedor-derecha {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
 }
 
 .menu-links {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 10vh;
 }
 
 .menu-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
+  text-decoration: none;
+  color: #535151;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 1.5vh;
+}
+
+.menu-links a:hover {
+  color: #c96b85;
 }
 
 .logo-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0;
+    padding: 2vh;
 }
 
 .timeline-container {

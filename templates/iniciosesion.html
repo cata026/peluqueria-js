@@ -13,16 +13,21 @@
   <div class="lado-derecho">
   <div class="iniciosesion">
     <h2>Iniciar Sesión</h2>
-    <form id="login">
+    <form id="formlogin">
       <input type="email" id="emailLogin" placeholder="Correo electrónico" required />
-      <input type="password" id="passwordLogin" placeholder="Contraseña" required />
-      <button class="boton"><a href="../templates/inicio.html">Entrar</a></button>
+      <input type="contrasena" id="contrasenaLogin" placeholder="Contraseña" required />
+      <button class="boton">Entrar</button>
     </form>
     <p id="mensajeLogin" class="mensaje"></p>
-    <p>¿No tenés cuenta? <a href="registro.html">Registrarse</a></p>
+    <div class="acciones-inferiores">
+      <p>¿No tenés cuenta? <a href="../templates/registro.html">Registrarse</a></p>
+      <hr>
+      <a href="../templates/inicio.html" class="btn-volver">← Volver al Inicio</a>
+    </div>
   </div>
   </div>
   </div>
-  <script src="../script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../iniciosesion.js"></script>
 </body>
 </html>

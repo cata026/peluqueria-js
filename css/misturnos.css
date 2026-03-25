@@ -1,61 +1,235 @@
-/* TURNOS */
+/* General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e3a2e6; /* Fondo oscuro elegante */
+    background: linear-gradient(135deg, #4f376b 0%, #c59dde 100%);
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.logo-container {
+  display: flex; /*es para poder centrar con justify-content y align-items*/
+  justify-content: flex-start; /* alinea el logo a la izquierda */
+  align-items: center;
+  padding: 2vh;
+}
 
+.logo-container img{
+  width: 150px;
+  height: auto;
+}
+
+.header-principal {
+  justify-content: space-between; /* logo a la izquierda, menú a la derecha */
+  align-items: center;
+}
+
+#inicio{ /*id de inicio que contiene el fondo y lo primero que se ve*/
+  width: auto;
+  padding-top: 20vh;
+  padding-left: 10vh;
+  padding-right: 100vh;
+  padding-bottom: 80vh;
+    background: 
+    linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+    url('../imagenes/fondo10.jpg'); /* fondo solo de la pagina de inicio*/
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  
+}
+
+.abajo{
+background: #ffffff;
+background: linear-gradient(0deg, rgb(136, 134, 138) 0%, rgb(85, 83, 85) 50%, rgb(58, 56, 56) 78%);
+}
+#inicio h1 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+} 
+
+#inicio p {
+  font-size: 2.2rem;
+  color: rgb(255, 255, 255);
+}
+
+.header-principal {
+  display: flex;
+  justify-content: center; /* Manda el logo a la izq y el contenedor a la der */
+  align-items: center; /* Alinea todo desde arriba */
+  width: 100%;
+  position: absolute; /* Para que el header quede flotando sobre tu fondo */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Evita que el padding te ensanche la pantalla */
+  background-color: #ffffff;
+}
+
+/* ---  para tirar todo a la derecha y apilarlo --- */
+.contenedor-derecha {
+  display: flex;
+  flex-direction: row; /*  en fila */
+  align-items: center;
+  gap: 30px; /* espacio entre menú y botón */
+}
+
+.menu-links {
+  display: flex;
+  gap: 10vh; /* Espaciado entre las palabras del menú */
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #535151; /* Color de los links, ajustalo a tu gusto */
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  padding: 1.5vh;
+}
+
+.menu-links a:hover {
+  color: #c96b85; /* Un rosado para que combine con tus íconos de fondo */
+}
+
+/* --- Botón (sin posiciones absolutas) --- */
+.loginlinks {
+  background: transparent;
+  border: 1px solid #c96b85;
+  padding: 16px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.loginlinks a {
+  color: #c96b85;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.loginlinks:hover {
+  background-color: #c96b85;
+}
+
+.loginlinks:hover a {
+  color: #ffffff;
+}
+.contenedor-turnos {
+    width: 100%;
+    max-width: 800px;
+}
+
+.encabezado-turnos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.encabezado-turnos h1 {
+    font-size: 2.5rem;
+    color: #ff7aa2; /* Tu rosa característico */
+    margin-bottom: 10px;
+}
+
+/* Tarjeta de cada turno */
 .turno {
-    background: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-left: 5px solid #ff7aa2;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
     transition: 0.3s;
 }
 
 .turno:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ff7aa2;
 }
 
-.turno-info {
-    flex: 1;
+.turno-info h3 {
+    margin: 0 0 10px 0;
+    color: #ff7aa2;
+    font-size: 1.3rem;
 }
 
 .turno-info p {
     margin: 5px 0;
-    font-size: 14px;
-}
-
-.turno-botones {
+    font-size: 1rem;
+    opacity: 0.9;
     display: flex;
+    align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
-.btn-cancelar, .btn-agregar {
-    padding: 8px 15px;
-    font-size: 14px;
+/* Botón Cancelar */
+.btn-cancelar {
+    background: #ff4d4d;
+    color: white;
     border: none;
-    border-radius: 6px;
+    padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.btn-cancelar {
-    background: #ff7aa2;
-    color: white;
-}
-
 .btn-cancelar:hover {
-    background: #ff5a7d;
+    background: #ff1a1a;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
 }
 
-.btn-agregar {
-    background: #4c3063;
-    color: white;
+/* Botón Volver */
+.acciones-finales {
+    text-align: center;
+    margin-top: 30px;
 }
 
-.btn-agregar:hover {
-    background: #3a234a;
+.btn-volver {
+    color: #ff7aa2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 122, 162, 0.5);
+}
+
+/* Si no hay turnos */
+#listaTurnos:empty::after {
+    content: "Todavía no tenés turnos reservados. ¡Animate a un cambio de look!";
+    display: block;
+    text-align: center;
+    padding: 50px;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.turno.pasado {
+    opacity: 0.5; /* Lo hace medio transparente */
+    filter: grayscale(100%); /* Le saca el color */
+    pointer-events: none; /* No deja que lo cancelen si ya pasó */
+    border-left-color: #888; /* Cambia el rosa por gris */
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.turno.pasado .btn-cancelar {
+    display: none; /* Escondemos el botón de cancelar */
+}
+
+.turno.pasado::after {
+    content: "Finalizado";
+    font-size: 0.8rem;
+    color: #888;
+    font-style: italic;
 }

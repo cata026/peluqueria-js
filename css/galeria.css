@@ -14,7 +14,6 @@ html, body { /*html y body son los elementos principales de la pagina*/
   margin: 0;
   min-height: 100vh;
   padding: 0;
-  padding-top: 100px; /* espacio superior para header fijo */
 }
 
 .main {  
@@ -49,13 +48,13 @@ a {
   justify-content: space-between; /* logo a la izquierda, menú a la derecha */
   align-items: center; /* Alinea todo desde arriba */
   width: 100%;
-  position: fixed; /* Para que el header quede fijo en top */
+  position: relative;
   top: 0;
   left: 0;
   z-index: 1000;
   box-sizing: border-box;
   background-color: #ffffff;
-  padding: 12px 20px;
+  padding: 15px 20px;
 }
 
 /* ---  para tirar todo a la derecha y apilarlo --- */
@@ -115,213 +114,61 @@ necesitamos empujar la sección de abajo para que el header no la tape.
   padding-top: 10%; /* Empuja el contenido inicial hacia abajo */
 }
 
-/* Contenedor de tarjetas/proyectos con fondo y separación */
-.grid {
-  margin-top: 2vh; 
-  column-count: 4; /* número de columnas en pantallas grandes */
-  column-gap: 1em; /* espacio entre columnas */
-  padding: 1em;
-  background: #170101;
-  background: linear-gradient(0deg, rgba(23, 1, 1, 1) 0%, rgba(2, 2, 18, 1) 50%, rgba(0, 0, 0, 1) 78%);
+footer {
+  margin-top: auto; /* Refuerzo para que se quede abajo */
+  width: 100%;
+  background-color: black;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Media queries para ajustar columnas en pantallas más pequeñas */
-@media (max-width: 1200px) {
-  .grid {
-    column-count: 3;
-  }
+
+
+/* --- ESTILO PINTEREST PARA LA GALERÍA --- */
+
+.main-content {
+  padding: 20px;
+  padding-bottom: 100px;
 }
 
-@media (max-width: 768px) {
-  .grid {
+.feed {
+  /* Crea las columnas automáticas */
+  column-count: 4; 
+  column-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feed img {
+  width: 100%;
+  display: inline-block; /* Evita que la foto se parta entre columnas */
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
+.feed img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(201, 107, 133, 0.4);
+  filter: brightness(1.1);
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablets (2 columnas) */
+@media (max-width: 800px) {
+  .feed {
     column-count: 2;
   }
 }
 
+/* Celulares (1 columna) */
 @media (max-width: 480px) {
-  .grid {
+  .feed {
     column-count: 1;
   }
 }
-
-/* TARJETAS (pins) en el grid */
-/* Estructura, fondo blanco para destacar sobre fondo oscuro y evitar rupturas de columna */
-.pin {
-  background: white;
-  margin-bottom: 1em;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  break-inside: avoid; /* evita que la tarjeta se corte entre columnas */
-}
-
-.pin img {
-  width: 100%; /* imagen ocupa todo el ancho de la tarjeta */
-  display: block;
-}
-
-.pin .info {
-  background: #dad6d6;
-  padding: 10px;
-  color: black;
-}
-
-.pin .titulo {
-  color: black;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-/* Estilo para el botón flotante GRANDE y CENTRADO */
-.add-project-btn {
-  /* --- Posición Fija y Centrado --- */
-  position: fixed;
-  bottom: 30px; /* Separación del borde inferior (puedes ajustar este valor) */
-  left: 50%; /* Mueve el punto de inicio al centro de la pantalla */
-  transform: translateX(-50%); /* Ajusta el botón hacia la izquierda la mitad de su propio ancho para centrarlo perfectamente */
-
-  /* --- Estilo Visual --- */
-  background-color: #850619; 
-  color: white; /* Color del icono SVG */
-  border: none;
-  /* el botón un círculo GRANDE */
-  width: 55px; /* Ancho total del círculo */
-  height: 55px; /* Alto total del círculo */
-  border-radius: 50%; /* Lo hace un círculo */
-  padding: 0;
-  
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
-  cursor: pointer;
-  z-index: 1000;
-  
-  /* Centrar el SVG dentro del botón */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Efecto al pasar el mouse */
-.add-project-btn:hover {
-  background-color: #ad081b; 
-  transform: translateX(-50%) scale(1.08); /* Mantiene el centrado y lo agranda un poco */
-}
-footer {
-  text-align: center;
-  margin-top: auto;
-  margin-top: 40px;
-  color: #ffffff;
-  background-color: black;
-}
-
-/* Estilos del modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.7);
-}
-
-.modal-contenido { /*color del modal*/
-  background-color: #570c0c;
-  margin: 10% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 70%;
-  height: 60%;
-  max-width: 70vh;
-  position: relative;
-}
-
-.cerrar {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.cerrar:hover {
-  color: red;
-}
-
-.modal-contenido form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-contenido input,
-.modal-contenido textarea {
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #0c0909;
-}
-
-.modal-contenido button {
-  background-color: #000000;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.modal-contenido button:hover {
-  background-color: #630808;
-}
-
-#preview {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover; /* recorta sin deformar */
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-
-.modal-contenido {
-  width: 90%;
-  max-width: 1000px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.modal-flex {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-
-#formularioProyecto {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#preview-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-#preview {
-  width: 100%;
-  max-width: 400px;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-}
-

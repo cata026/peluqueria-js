@@ -346,3 +346,36 @@ footer {
 .acordion-item.active .acordion-body {
   display: block;
 }
+
+.servicios {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 80px;
+    height: 80px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card input {
+    display: none;
+}
+
+.card input:checked + img {
+    border: 3px solid #ff7aa2;
+    border-radius: 10px;
+}

@@ -7,7 +7,43 @@
     <link rel="stylesheet" href="../css/misturnos.css">
 </head>
 <body>
-    <div id="listaTurnos"></div>
+    <header class="header-principal">
+  <div class="logo-container">
+    <img src="../imagenes/logo.png" alt="Logo">
+  </div>
+
+  <div class="contenedor-derecha">
+    
+    <nav class="navegador">
+      <div class="menu-links" id="menuLinks">
+        <a href="inicio.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="nosotros.html">Sobre Nosotros</a>
+        <a href="index.html">Reservas Online</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+
+    <button class="loginlinks">
+      <a  id="loginlinks" href="iniciosesion.html">Iniciar Sesión</a>
+    </button>
+
+  </div>
+</header>
+    <div class="contenedor-turnos">
+        <header class="encabezado-turnos">
+            <h1>Mis Próximos Turnos</h1>
+            <p>Acá podés ver y gestionar tus citas pendientes.</p>
+        </header>
+
+        <div id="listaTurnos" class="grid-turnos">
+            </div>
+
+        <div class="acciones-finales">
+            <a href="index.html" class="btn-volver">← Volver a Reservar</a>
+        </div>
+    </div>
 
 <script src="../main.js"></script>
 </body>
