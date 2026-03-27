@@ -307,52 +307,19 @@ footer {
 }
 
 /* Accordion styles */
-.acordion {
-  width: 100%;
-}
 
-.acordion-item {
-  margin-bottom: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.acordion-header {
-  background: linear-gradient(to right, #e9b4c3, #dfced3);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-family: 'Orbitron', sans-serif;
-  transition: background 0.3s ease;
-}
-
-.acordion-header:hover {
-  background: linear-gradient(to right, #dd7796, #d6839a);
-}
-
-.acordion-body {
-  display: none;
-  padding: 15px 20px;
-  background: rgba(247, 241, 246, 0.9);
-  color: #535151;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.acordion-item.active .acordion-body {
-  display: block;
-}
 
 .servicios {
     display: flex;
     gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px; 
+    width: 100%;
 }
 
 .card {
+  flex: 0 0 auto;
+  width: 140px;
     border: 2px solid transparent;
     padding: 10px;
     border-radius: 10px;
@@ -360,11 +327,24 @@ footer {
     cursor: pointer;
     background: white;
     transition: 0.3s;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card img {
     width: 80px;
     height: 80px;
+    object-fit: cover; 
+    border-radius: 5px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #535151;
+    font-weight: bold;
 }
 
 .card:hover {
